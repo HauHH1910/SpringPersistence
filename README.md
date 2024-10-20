@@ -1,24 +1,48 @@
-<h1>Spring Persistence</h1>
+<h1>How to use a custom database sequence to generate primary key values</h1>
 <hr/>
-<h2>This project is for learning Spring Data JPA and Hibernate</h2>
+<h2>Problem:</h2>
 <p>
-  In the Spring ecosystem, <strong>Spring Data JPA</strong> and <strong>Hibernate</strong> are two popular and powerful technologies that help manage data and interact with databases efficiently.
-  Learning and using these technologies brings many benefits to Java programmers, especially in enterprise application development. 
+  Hibernate uses its default database sequence to generate primary key values. How to I use my own sequence?
 </p> 
-  <h3>Why Learn Spring Data JPA and Hibernate?</h3> 
-<p> 
-  1. <strong>Simplify your work with databases:</strong> Spring Data JPA provides a powerful abstraction layer that makes it easy to perform CRUD (Create, Read, Update, Delete) operations without writing a lot of SQL manually. Hibernate, with its ORM (Object   Relational Mapping) capabilities, helps map Java objects to database tables automatically.
-</p>
+<h2>Solution:</h2>
 <p>
-  2. <strong>Automating complex operations:</strong> With Hibernate and Spring Data JPA, complex query operations can be automated and optimized, thanks to annotations and an object-oriented approach. This saves time and reduces the risk of errors that arise   from writing SQL statements manually.
-</p>
+    The JPA specification supports four options to generate primary key values. One of them is the <strong>GenerationType.SEQUENCE</strong>, which uses a database sequence to generate primary key values
+</p> 
 <p>
-  3. <strong>Highly scalable:</strong> Both Hibernate and Spring Data JPA support easy integration with various database management systems, from SQL databases (such as MySQL, PostgreSQL) to NoSQL (such as MongoDB). This makes it easy for your application to scale as requirements change.
+    When you want to use a custom database sequence, you have to annotate the primary key attribute with the @GeneratedValue annotation and set <strong>GenerationType.SEQUENCE</strong> as the value of the strategy attribute.
+    This tells Hibernate to use a database sequence to generate the primary key value. 
+    If you don’t provide any additional information, Hibernate uses its default sequence, hibernate_sequence.
 </p>
+
 <p>
-  4. <strong>Strong transaction management:</strong> Spring Data JPA combined with Spring Transaction Management helps manage data transactions safely and efficiently, ensuring data integrity even in cases of errors.
+    You can configure the name and schema of a custom database sequence using a
+    @SequenceGenerator annotation. The following code snippet shows an
+    example of such a mapping. The @GeneratedValue annotation references a
+    custom generator with the name author_generator. This generator gets
+    defined by the @SequenceGenerator annotation, which tells Hibernate to
+    use the author_seq database sequence.
 </p>
+
+```
+    @Entity
+    public class Author {
+        
+        @Id
+        @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "author_generator"
+        )
+        @SequenceGenerator(
+            name = "author_generator"
+        )
+        @Column(
+            name = "id",
+            updatable = false,
+            nullable = false
+        )
+        private Long id;
+    }
+```
 <p>
-  5. <strong>Easy integration with other Spring components:</strong> Since Spring Data JPA is part of the Spring ecosystem, it integrates very well with other components such as Spring Boot, Spring Security and Spring MVC, making it easy to develop comprehensive applications. 
+    When you persist a new Author entity, Hibernate selects a new primary key value from the database sequence <strong>author_seq</strong> before it executes the SQL INSERT statement.
 </p>
-<p> <strong>Learning Spring Data JPA and Hibernate</strong> helps you master the knowledge of data management in Java applications effectively, quickly, and professionally, meeting the requirements of modern projects. </p>
