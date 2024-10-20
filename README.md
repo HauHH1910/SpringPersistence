@@ -1,4 +1,4 @@
-<h1 style="color: #4169e1">Spring Persistence</h1>
+<h1>Spring Persistence</h1>
 <hr/>
 <h2>This project is for learning Spring Data JPA and Hibernate</h2>
 <p>
