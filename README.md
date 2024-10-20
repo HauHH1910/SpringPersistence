@@ -46,3 +46,10 @@
 <p>
     When you persist a new Author entity, Hibernate selects a new primary key value from the database sequence <strong>author_seq</strong> before it executes the SQL INSERT statement.
 </p>
+<p>
+    If sequence <strong>author_seq</strong> doesn't exist in the database you have to create it first
+</p>
+
+```
+    CREATE SEQUENCE author_seq START WITH 1 INCREMENT BY 1;
+```
