@@ -65,3 +65,66 @@ It’s similar for the entity mapping. You just need to reference the name of th
 attribute and Hibernate has all the information it needs.
 
 >That’s all you need to do to define a bidirectional many-to-one association.
+
+Bidirectional associations are easy to use in queries, but they also require an additional step when you persist a new entity.
+You need to update the association on both sides when you add or remove an entity.
+
+You can see an example of it in the following code snippet, in which I first create a new Review entity and initialize its association to the Book entity.
+And after that, I also need to add the new Review entity to the List of reviews on the Book entity.
+
+```
+    Book b = em.find(Book.class, 1L);
+    
+    Review r = new Review();
+    r.setComment("This is a comment");
+    r.setBook(b);
+    
+    b.getReviews().add(r);
+    
+    em.persist(r);
+
+```
+
+Updating the associations on both entities is an error-prone task.
+
+Therefore, it’s a good practice to provide a helper method that adds another entity to the many side of the association
+
+```java
+    import jakarta.persistence.*;
+
+    import java.util.ArrayList;
+    
+    @Entity
+    public class Review {
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(nullable = false, updatable = false, name = "id")
+        private Long id;
+    
+        @ManyToOne
+        @JoinColumn(name = "fk_book")
+        private Book book;
+    
+        //Other attribute
+    }
+    
+    @Entity
+    public class Book {
+    
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(nullable = false, updatable = false, name = "id")
+        private Long id;
+    
+        @OneToMany(mappedBy = "book")
+        private List<Review> reviews = new ArrayList<>();
+    
+        //Other attribute
+        
+        //Helper method
+        public void addReview(Review review){
+            this.reviews.add(review);
+            review.setBook(this);
+        }
+    }
+```
