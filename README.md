@@ -36,16 +36,16 @@
 1. Basic Mappings:
    - [How to define schema and table names](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/schema-table-names)
    - [How to map basic entity attributes to data columns](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/map-basic-entity-attributes)
-   - How to map a util Data or Calendar to a database column
-   - How to map an enum to a database column
-   - How to map a simple primary key
-   - How to use an auto-incremented column to generated column to generate primary key values
-   - How to use a custom database sequence to generate primary key values
-   - How to use a database table to generate primary keu values
-   - How to use a generated UUID as a primary key
-   - How to map a bidirectional many-to-one association
-   - How to map a unidirectional many-to-one association
-   - How to map a unidirectional one-to-many association
+   - [How to map a util Data or Calendar to a database column](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/map-util-date-or-calendar)
+   - [How to map an enum to a database column](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/map-enum-to-database-column)
+   - [How to map a simple primary key](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/map-simple-primary-key)
+   - [How to use an auto-incremented column to generated column to generate primary key values](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/auto-incremented-column-primary-key)
+   - [How to use a custom database sequence to generate primary key values](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/custom-sequence-primary-key)
+   - [How to use a database table to generate primary keu values](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/use-table-to-generate-primary-key)
+   - [How to use a generated UUID as a primary key](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/generated-primary-key-uuid)
+   - [How to map a bidirectional many-to-one association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/bidirectional-many-to-one-association)
+   - [How to map a unidirectional many-to-one association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/unidirectional-many-to-one-association)
+   - [How to map a unidirectional one-to-many association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/unidirectional-one-to-many-assocation)
    - How to map a bidirectional many-to-many association
    - How to map a unidirectional many-to-many association
    - How to map a bidirectional one-to-one association
