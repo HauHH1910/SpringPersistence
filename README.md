@@ -46,7 +46,7 @@
    - [How to map a bidirectional many-to-one association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/bidirectional-many-to-one-association)
    - [How to map a unidirectional many-to-one association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/unidirectional-many-to-one-association)
    - [How to map a unidirectional one-to-many association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/unidirectional-one-to-many-assocation)
-   - How to map a bidirectional many-to-many association
+   - [How to map a bidirectional many-to-many association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/bidirectional-many-to-many-association)
    - How to map a unidirectional many-to-many association
    - How to map a bidirectional one-to-one association
    - How to map a unidirectional one-to-one association
