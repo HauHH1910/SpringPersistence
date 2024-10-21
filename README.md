@@ -35,7 +35,7 @@
 
 1. Basic Mappings:
    - [How to define schema and table names](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/schema-table-names)
-   - How to map basic entity attributes to data columns
+   - [How to map basic entity attributes to data columns](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/map-basic-entity-attributes)
    - How to map a util Data or Calendar to a database column
    - How to map an enum to a database column
    - How to map a simple primary key
