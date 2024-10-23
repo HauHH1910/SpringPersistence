@@ -12,8 +12,19 @@
 </ul>
 <h2>Example</h2>
 
-```
+```java
+
+    import jakarta.persistence.*;
+
     @Entity
     @Table(name = "author", schema = "bookstore")
-    public class Author {...}
+    public class Author {
+        
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(name = "id", nullable = false, updatable = false)
+        private Long id;
+    
+        //Other attribute
+    }
 ```
