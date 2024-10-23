@@ -5,7 +5,8 @@
 ## Solution:
     You need to model the association on both entites if you want to be able to navigate it in both directions.
     Consider this exampe:
-        A book in an online bookstore can have multiple reviews. In your domain model, the Book entity has a one-to-many association with Review entity, and the Review entity has a many-to-one relationship to the Book entity.
+        A book in an online bookstore can have multiple reviews. 
+        In your domain model, the Book entity has a one-to-many association with Review entity, and the Review entity has a many-to-one relationship to the Book entity.
 ![img.png](img.png)
 
 - Let's begin with Review entity, which is the owning side of the association in this example.
