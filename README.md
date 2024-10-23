@@ -7,7 +7,7 @@
     You can define the schema and table name with the <strong>schema</strong> and <strong>name</strong> attributes of the <u>javax.persistence.Table</u> annotation. <br/>
     </li>
     <li>
-    You just have to add the @Tableannotation to your entity class and set the name and schema attributes.
+    You just have to add the @Table annotation to your entity class and set the name and schema attributes.
     </li>
 </ul>
 <h2>Example</h2>
