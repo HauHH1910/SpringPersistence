@@ -51,7 +51,7 @@
    - [How to map a bidirectional one-to-one association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/bidirectional-one-to-one-association)
    - [How to map a unidirectional one-to-one association](https://github.com/HauHH1910/SpringPersistence/tree/basic-mappings/unidirectional-one-to-one-association)
 2. Advanced Mappings:
-   - ...
+   - [How to map view with Hibernate](https://github.com/HauHH1910/SpringPersistence/tree/advanced-mappings/map-view-with-hibernate)
 3. Hibernate Specific Queries and Mappings:
    - ...
 4. Java 8:
